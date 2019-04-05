@@ -11,19 +11,6 @@ module.exports = function (app) {
       type: String,
       required: true
     },
-    productsId: {
-      type: Schema.Types.ObjectId,
-      ref: 'products',
-      required: true
-    },
-    createdBy: {
-      type: Schema.Types.ObjectId,
-      ref: 'users'
-    },
-    active: {
-      type: Boolean,
-      default: true
-    }
 
   }, {
     timestamps: true

@@ -7,20 +7,13 @@ module.exports = function (app) {
   const { Schema } = mongooseClient;
   const issues = new Schema({
 
-    productsId: {
+    listsId: {
       type: Schema.Types.ObjectId,
-      ref: 'products',
-      required: true
+      ref: 'lists',
     },
-    boardsId: {
-      type: Schema.Types.ObjectId,
-      ref: 'boards',
-      required: true
-    },
-    createdBy: {
+    ownerId: {
       type: Schema.Types.ObjectId,
       ref: 'users',
-      required: true
     },
     name: {
       type: String,
@@ -28,29 +21,20 @@ module.exports = function (app) {
     },
     status: {
       type: String,
-      required: true,
       default: 'Open'
+    },
+    order: {
+      type: String
     },
     description: {
       type: String
-    },
-    priority: {
-      type: Number,
-      required: true,
-      default: 1
     },
     vstsBugId: {
       type: String,
       required: true,
       unique: true
-    },
-    vstsPbiId: {
-      type: String
-    },
-    archived: {
-      type: Boolean,
-      default: false
     }
+
 
   }, {
     timestamps: true

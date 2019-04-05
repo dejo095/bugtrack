@@ -19,12 +19,8 @@ module.exports = function (app) {
     password: {
       type: String,
       required: true
-    },
-    active: {
-      type: Boolean,
-      default: true
     }
-  
+
   }, {
     timestamps: true
   });

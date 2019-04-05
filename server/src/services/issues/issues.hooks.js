@@ -6,7 +6,7 @@ module.exports = {
     all: [ authenticate('jwt') ],
     find: [],
     get: [],
-    create: [ hooks.associateCurrentUser({ as: 'createdBy' }) ],
+    create: [ hooks.associateCurrentUser({ as: 'ownerId' }) ],
     update: [],
     patch: [],
     remove: []

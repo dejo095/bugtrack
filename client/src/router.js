@@ -46,5 +46,18 @@ export default new Router({
           });
       },
     },
+    {
+      path: '/boards/:id',
+      name: 'board',
+      component: () => import('./views/Board.vue'),
+      beforeEnter(to, from, next) {
+        store.dispatch('auth/authenticate')
+          .then(() => {
+            next();
+          }).catch(() => {
+            next('/login');
+          });
+      },
+    },
   ],
 });

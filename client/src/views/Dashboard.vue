@@ -1,24 +1,21 @@
 <template>
-  <v-container fluid>
-    <v-layout>
+  <v-layout>
+    <h1>Existing boards</h1>
 
-
-      <!-- Modal window for creating new board -->
-      <v-dialog fullscreen hide-overlay transition="dialog-bottom-transition" scrollable v-model="dialog" persistent>
-        <template v-slot:activator="{ on }">
-          <v-btn v-on="on" id="createIssue" absolute bottom right fab dark color="red">
-            <v-icon>add</v-icon>
-          </v-btn>
-        </template>
-        <create-issue
-          :dialog="dialog"
-          @returnedDialog="dialog = false"
-          @dataForNewIssue="createNewIssue($event)">
-        </create-issue>
-      </v-dialog>
-
-    </v-layout>
-  </v-container>
+    <!-- Modal window for creating new board
+    <v-dialog fullscreen hide-overlay transition="dialog-bottom-transition" scrollable v-model="dialog" persistent>
+      <template v-slot:activator="{ on }">
+        <v-btn v-on="on" id="createIssue" absolute bottom right fab dark color="red">
+          <v-icon>add</v-icon>
+        </v-btn>
+      </template>
+      <create-issue
+        :dialog="dialog"
+        @returnedDialog="dialog = false"
+        @dataForNewIssue="createNewIssue($event)">
+      </create-issue>
+    </v-dialog> -->
+  </v-layout>
 </template>
 
 <script>
@@ -42,7 +39,8 @@ export default {
 };
 </script>
 
-<style lang="stylus" scoped>
+<style lang="stylus">
+
   #createIssue
     bottom: 20px
 

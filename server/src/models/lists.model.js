@@ -5,20 +5,23 @@
 module.exports = function (app) {
   const mongooseClient = app.get('mongooseClient');
   const { Schema } = mongooseClient;
-  const products = new Schema({
+  const lists = new Schema({
 
     name: {
       type: String,
       required: true
     },
-    active: {
-      type: Boolean,
-      default: true
-    }
+    boardId: {
+      type: Schema.Types.ObjectId,
+      ref: 'boards'
+    },
+    order: {
+      type: String,
+    },
 
   }, {
     timestamps: true
   });
 
-  return mongooseClient.model('products', products);
+  return mongooseClient.model('lists', lists);
 };

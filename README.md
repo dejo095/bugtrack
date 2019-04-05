@@ -10,5 +10,5 @@
 * [x] Add feathers-authentication-hooks to backend
 * [x] Set associateCurrentUser on backend services on hooks
 * [x] Set schema models for services
+* [ ]
 * [ ] Create form for opening issue
-* [ ] 

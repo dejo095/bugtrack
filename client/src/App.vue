@@ -1,7 +1,7 @@
 <template>
   <v-app>
     <v-content>
-      <v-container fluid>
+      <v-container fluid ma-0 pa-0>
         <v-btn v-if="!user" :to="{ name: 'login' }">Login</v-btn>
         <v-btn v-if="!user" :to="{ name: 'register' }">Register</v-btn>
         <v-btn v-if="user" @click="signOut">Logout</v-btn>
