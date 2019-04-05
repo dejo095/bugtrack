@@ -1,25 +1,24 @@
 <template>
-  <h1>Dashboard {{ users}}
+  <h1>Dashboard {{ current.email }}
   </h1>
 </template>
 
 <script>
-import { mapState } from 'vuex';
+import { mapState, mapGetters } from 'vuex';
 
 export default {
+  computed: {
+    ...mapGetters('users', ['current'])
+  },
   methods: {
-    // ...mapState('auth', ['userId']),
-    ...mapState(['users']),
+    // super() {
+    //   console.log(this.current.email);
+    //   console.log(this.current.name);
+      
+    // }
   },
   created() {
-  console.log(users);
-
-      // this.$store.dispatch('users/find', { query: { _id: userId }})
-      //   .then((user) => {
-      //     console.log(user.data);
-
-      //   });
-
+    // this.super();
   }
 };
 </script>

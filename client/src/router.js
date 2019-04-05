@@ -1,6 +1,8 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import Dashboard from '@/views/Dashboard.vue';
+import Home from '@/views/Home.vue';
+
+import store from './store'
 
 Vue.use(Router);
 
@@ -10,8 +12,16 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'dashboard',
-      component: Dashboard,
+      name: 'home',
+      component: Home,
+      beforeEnter(to, from, next) {
+        store.dispatch('auth/authenticate')
+          .then(() => {
+            next('/dashboard');
+          }).catch(() => {
+            next('/login');
+          });
+      },
     },
     {
       path: '/login',
@@ -22,6 +32,19 @@ export default new Router({
       path: '/register',
       name: 'register',
       component: () => import('./views/Register.vue'),
+    },
+    {
+      path: '/dashboard',
+      name: 'dashboard',
+      component: () => import('./views/Dashboard.vue'),
+      beforeEnter(to, from, next) {
+        store.dispatch('auth/authenticate')
+          .then(() => {
+            next();
+          }).catch(() => {
+            next('/login');
+          });
+      },
     },
   ],
 });
