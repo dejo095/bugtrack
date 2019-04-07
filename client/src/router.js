@@ -17,7 +17,7 @@ export default new Router({
       beforeEnter(to, from, next) {
         store.dispatch('auth/authenticate')
           .then(() => {
-            next('/dashboard');
+            next('/boards');
           }).catch(() => {
             next('/login');
           });
@@ -34,9 +34,9 @@ export default new Router({
       component: () => import('./views/Register.vue'),
     },
     {
-      path: '/dashboard',
-      name: 'dashboard',
-      component: () => import('./views/Dashboard.vue'),
+      path: '/boards',
+      name: 'boards',
+      component: () => import('./views/Boards.vue'),
       beforeEnter(to, from, next) {
         store.dispatch('auth/authenticate')
           .then(() => {

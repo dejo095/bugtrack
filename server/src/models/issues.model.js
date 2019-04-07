@@ -24,7 +24,8 @@ module.exports = function (app) {
       default: 'Open'
     },
     order: {
-      type: String
+      type: Number,
+      default: 1
     },
     description: {
       type: String

@@ -16,6 +16,23 @@ const plugins = [
       password: '',
     },
   }),
+  service('boards', {
+    instanceDefaults: {
+      name: '',
+    },
+  }),
+  service('lists', {
+    instanceDefaults: {
+      name: '',
+    },
+  }),
+  service('issues', {
+    instanceDefaults: {
+      name: '',
+      description: '',
+      vstsBugId: '',
+    },
+  }),
   auth({ userService: 'users' }),
 ];
 

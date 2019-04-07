@@ -12,3 +12,5 @@
 * [x] Set schema models for services
 * [ ]
 * [ ] Create form for opening issue
+* [ ] setup global snackbar component and setup all errors to use store
+* [ ] 

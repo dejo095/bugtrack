@@ -85,7 +85,7 @@ export default {
           strategy: 'local',
           ...this.user,
         }).then(() => {
-          this.$router.replace({ name: 'dashboard' });
+          this.$router.replace({ name: 'boards' });
         }).catch(() => {
           console.log('error during login');
 

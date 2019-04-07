@@ -16,7 +16,8 @@ module.exports = function (app) {
       ref: 'boards'
     },
     order: {
-      type: String,
+      type: Number,
+      default: 1
     },
 
   }, {
